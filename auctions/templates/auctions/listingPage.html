@@ -1,0 +1,78 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div class="listingPage">
+    <h2>{{currentListing.title}}</h2>
+    {% if user.is_authenticated %}
+        {%if currentListing.creator == currentUser %}
+    <form action="{% url 'listingPage' listingID=currentListing.id %}" method="post">
+        {%csrf_token%}
+            {% if currentListing.active %}
+        <button type="submit"> Active </button>
+            {% else %}
+        <button type="submit"> Not Active </button>
+            {% endif %}
+    </form>
+            
+        {% endif %}
+        {% if not currentListing.active %}
+                <h5> Winner is {{currentListing.startbid.user}} </h5>
+                {% endif %}
+        
+      
+
+
+        {% if isUserInList  %}
+        <form action="{% url 'removeWatchlist' currListing=currentListing.id %}" method="post">
+            {%csrf_token%}
+            
+            <button class="removeWatchlist" type="submit"> Remove from Watclist </button>
+        </form>
+        
+        {% else %}
+        <form action="{% url 'addToWatchlist' currListing=currentListing.id %}" method="post">
+            {%csrf_token%}
+            <button class="addtoWatchlist" type="submit"> Add To Watchlist </button>
+        </form>
+        {% endif %}
+        {% if currentListing.active and currentListing.creator != currentUser %}
+        <form action="{% url 'bidding' currListing=currentListing.id %}" method="post">
+            {%csrf_token%}
+            <input type="number" min="0" name="placeBid"> 
+            <button class="makeBid" type="submit"> Make Your Bid </button>
+        </form>
+        {% endif %}
+        {{errorMessage}}        
+    
+    {% endif %}
+    <p> {{currentListing.description}}</p>
+    <div>
+        <img class="listingPageImg" src="{{currentListing.imagelink}}" alt="{{currentListing.title}}">
+    </div>
+    <div>
+        <p> Current Bid made by {{currentListing.startbid.user}}: {{currentListing.startbid}} USD </p>
+    </div>
+
+    {% if user.is_authenticated %}
+    <div> 
+        <form action="{% url 'addcomment' currListing=currentListing.id %}" method="post" > 
+            {%csrf_token%}
+            <input type="text" name="comm">
+            <button type="submit"> add comment </button>
+        </form>
+    </div>
+    
+        <h3> Comments Section: </h3>
+        {% for comments in currentComments %}
+        <div class="commentSeciton">
+        <p> {{ comments.comment }}</p>
+        <h5> author: {{ comments.author }}</h5>
+        </div>
+        {% endfor %}
+
+
+   
+    {%endif%}
+</div>
+
+{% endblock %}

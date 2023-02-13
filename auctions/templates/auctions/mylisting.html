@@ -1,0 +1,20 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    <h2 class="txt-active-listings">Listings for User: {{request.user}}</h2>
+<div class="category-grid-cont">
+        {% for listing in allObjects %}
+    <div class="category-grid">
+        <a href="{% url 'listingPage' listing.id %}"> 
+            <span class="name"> Name: {{ listing.title }} </span>
+            <br>
+            <img class="listingImages" alt="{{listing.title}}" src="{{listing.imagelink}}">
+        </a>
+            Description: {{ listing.description }}
+    </div>
+        {% endfor %}
+</div>
+
+
+{% endblock %}

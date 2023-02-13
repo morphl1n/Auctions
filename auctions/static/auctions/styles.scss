@@ -1,0 +1,157 @@
+*, :after, :before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    }
+}
+
+.logo{
+    margin-left: 15px;
+    width: 120px;
+}
+
+.signedin{
+    margin-left: 15px;
+}
+
+.active-listings{
+    margin-left: 15px;
+}
+
+
+.listing-container{
+    margin-top: 100px;
+    display: grid;
+    margin-left: 15px;
+    margin-right: 15px;
+   
+ 
+    grid-template-columns: repeat(3, 1fr);
+    
+    justify-content: center;
+    align-content: center;
+    gap: 50px;
+
+    a{
+        color: black;
+        
+        &:active{
+            color: inherit;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    li{ 
+        list-style: none;
+        position: relative;
+    }
+   
+}
+
+.listing{
+    display: flex;
+    border: 0.5px solid gray;
+    border-radius: 18px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.listingImages{
+    margin: 10px;
+    width: 240px;
+    height: 240px;
+    
+    border-radius: 18px;
+}
+
+
+.listingPageImg{
+    width: 500px;
+    border-radius: 18px;
+}
+
+.listingPage{
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    button{
+        all: unset;
+        padding: 5px;
+        background-color: lightgray;
+        margin: 3px;
+        &:hover{
+            background-color: darken(lightgray, 30%);
+        }
+    }
+}
+
+.commentSeciton{
+    border: solid 0.5px gray;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 18px;
+    width: 50%;
+}
+
+.categories-cont{
+    margin-left: 15px;
+}
+
+.categories-ul{
+    list-style: none;
+}
+
+.txt-active-listings{
+    margin-left: 15px;
+}
+
+
+.category-grid-cont{
+    display: grid;
+    margin-left: 15px;
+    margin-right: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-content: center;
+    gap: 50px;
+}
+
+.category-grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid gray;
+    border-radius: 18px;
+    padding: 5px;
+
+}
+
+.createlisting-cont{
+    margin-left: 15px;
+    form{    
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap:15px;
+        textarea{
+            width: 185px;
+            resize: none;
+        }
+    }
+}
+
+.login-form{
+    margin-left: 15px;
+    max-width: 250px;
+}
