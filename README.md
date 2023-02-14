@@ -1,13 +1,12 @@
-# This is a project for mini Auction/E-commerce site, mainly focused on database models, so no JavaScript or extra CSS styling is used. 
+# This project focuses on creating a mini auction/e-commerce site with a primary emphasis on developing database models. In keeping with this focus, JavaScript and extensive CSS styling have been omitted. 
 
 
 # Key features:
 
-1. Register/Login
-2. Create your listing with title, starting bid, description, image(URL)
-3. See list of all listings
-4. add or remove listings from watchlist
-5. on watchlist you only see listings you added on watchlist
-6. bid on listings
-7. comment on listings
-8. if you are the creator of the listing, you can active or deactivate the listing. Once listing is deactivated, last highest bid wins the auction. 
+1. Registration/Login
+2. Ability to create listings, including specifying a title, starting bid, description, and image (via URL)
+3. View a list of all available listings
+4. Add and remove listings from a personal watchlist for easier tracking
+5. Place bids on listings of interest
+6. Comment on listings
+8. As a listing creator, activate or deactivate the listing at any time. When a listing is deactivated, the last highest bid wins the auction."
