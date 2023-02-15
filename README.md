@@ -1,5 +1,6 @@
 # This project focuses on creating a mini auction/e-commerce site with a primary emphasis on developing database models. In keeping with this focus, JavaScript and extensive CSS styling have been omitted. 
 
+#[Live APP](https://auctions.herokuapp.com/)
 
 # Key features:
 
